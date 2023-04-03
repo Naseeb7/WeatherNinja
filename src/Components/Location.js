@@ -15,16 +15,16 @@ const Location = () => {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
-    const reset=()=>{
-        // setLat(null)
-        // setLong(null)
-    }
+    let date=document.getElementById("date")
+    const d=new Date()
+    let day=d.toISOString().split("T")[0]
     return (
         <div>
             <button onClick={getLocation()}>Location</button>
             <span id="x"></span>
             <span> Latitude={lat} </span>
-            <span>Longitude={long}</span>
+            <span>Longitude={long}</span><br/>
+            <span id="date">{day}</span>
         </div>
     )
 }
