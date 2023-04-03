@@ -1,0 +1,12 @@
+.hourCardhidden{
+    display: none;
+}
+.hourCard{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+.hours{
+    background-color: red;
+    margin: 5px;
+}
