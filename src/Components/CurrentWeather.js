@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import weatherContext from '../Contexts/weathercontext'
+import "./CurrentWeather.css"
 
 const CurrentWeather = () => {
     const context=useContext(weatherContext)
@@ -8,18 +9,24 @@ const CurrentWeather = () => {
   return (
      location && <div className='currentWeatherContainer'>
         <div className="locationDetails">
-            <div className="details">{location.name},{location.region},{location.country}</div>
-            <div className="date">Date : {location.localtime.split(" ")[0]}</div>
+        <i class="fa-solid fa-location-dot" style={{color: "#ffffff"}}></i>
+            <span className="details">{location.name} , {location.region} , {location.country}</span>
+            <span className="date">{location.localtime.split(" ")[0]}</span>
+        </div>
+        <h4>Now</h4>
+        <div className="currentContainer">
+        <div className="currentTemp">
+            <img src={current.condition.icon} alt="CurrentCondition" className='weatherIcon'/>
+            <h1>{current.temp_c}&#176;c</h1>
         </div>
         <div className="currentWeather">
-            <img src={current.condition.icon} alt="CurrentCondition" />
-            <div className="currentTemp">
-                {current.temp_c}&#176;c<br/>
-                {current.condition.text}<br/>
-                Feels-like : {current.feelslike_c}&#176;c
-                Humidity : {current.humidity}%
-                UV-index : {current.uv}<i className="fa-regular fa-sun" style={{color: "#000000"}}></i>
-            </div>
+                <h3>{current.condition.text}</h3>
+                <div className="additionalDetails">
+                <span>Feels-like : <br/>{current.feelslike_c}&#176;c</span>
+                <span>Humidity : <br/>{current.humidity}%</span>
+                <span>UV-index : <br/>{current.uv}<i className="fa-regular fa-sun" style={{color: "white"}}></i></span>
+                </div>
+        </div>
         </div>
     </div>
   )

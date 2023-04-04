@@ -6,7 +6,7 @@
     /* border: 2px solid red; */
     margin: 5px;
     padding: 5px;
-    /* width: 100%; */
+    width: 100%;
 }
 #search{
     display: flex;
@@ -21,6 +21,7 @@
 }
 .buttons{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     /* border: 2px solid pink; */
     width: 20%;

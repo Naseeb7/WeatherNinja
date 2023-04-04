@@ -6,12 +6,12 @@ import SearchBar from "./Components/SearchBar"
 
 function App() {
   return (
-    <>
+    <div className='appContainer'>
     <WeatherState>
       <SearchBar/>
       <Weather/>
     </WeatherState>
-    </>
+    </div>
   );
 }
 

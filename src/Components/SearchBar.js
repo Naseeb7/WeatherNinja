@@ -13,8 +13,8 @@ const SearchBar = () => {
     <div className='searchContainer'>
       <input type="text" placeholder="London,Delhi,Moscow...." name="search"  id='search'/>
       <div className="buttons">
-      <button id='searchbtn' className='btn' onClick={handleSearch}>Search Location</button>
-      <button id="currentWeather" className='btn' onClick={handleCurrent}>Current Location</button>
+      <button id='searchbtn' className='btn' onClick={handleSearch}>Search</button>
+      <button id="currentWeather" className='btn' onClick={handleCurrent}>Current</button>
       </div>
     </div>
   )
