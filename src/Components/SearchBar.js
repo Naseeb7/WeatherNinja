@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import weatherContext from '../Contexts/weathercontext'
+import "./SearchBar.css"
 
 const SearchBar = () => {
   const context=useContext(weatherContext)
@@ -9,10 +10,12 @@ const SearchBar = () => {
      getWeather()
   }
   return (
-    <div>
-      <input type="text" placeholder="Search.." name="search"  id='search'/>
-      <button id='searchbtn' className='btn' onClick={handleSearch}>Search</button>
+    <div className='searchContainer'>
+      <input type="text" placeholder="London,Delhi,Moscow...." name="search"  id='search'/>
+      <div className="buttons">
+      <button id='searchbtn' className='btn' onClick={handleSearch}>Search Location</button>
       <button id="currentWeather" className='btn' onClick={handleCurrent}>Current Location</button>
+      </div>
     </div>
   )
 }

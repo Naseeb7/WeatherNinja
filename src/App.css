@@ -1,6 +1,21 @@
 body{
-    display: flex;
+    /* display: flex; */
     /* background-position: center center; */
     background-repeat: no-repeat;
     background-size: cover;
+}
+.btn{
+    display: flex;
+    border-radius: 5px;
+    background-color: #ADEFD1FF  ;
+    color: #00203FFF ;
+    padding: 4px;
+    margin: 5px;
+    transition: .3s;
+}
+.btn:hover{
+    scale: .95;
+}
+.btn:active{
+    transform: translateY(2px);
 }
