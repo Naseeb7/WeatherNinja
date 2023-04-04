@@ -4,12 +4,25 @@ import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
 
 const Weather = () => {
+    // const context=useContext(weatherContext)
+    // const {getWeather,getLocation,setBackground}=context
+    // useEffect(()=>{
+    //   getLocation()
+    //   getWeather()
+    // if(current){
+    //   setBackground(current)
+    //   }
+    // },[current])
     const context=useContext(weatherContext)
-    const {weather_info,location,current,getWeather,getLocation}=context
+    const {current,setBackground}=context
     useEffect(()=>{
-        getWeather()
-    },[])
-  return ( <div>
+      if(current){
+      setBackground(current)
+      }
+    },[current])
+  return ( 
+  <div>
+    <span id="locating"></span>
       <CurrentWeather/>
       <Forecast/>
     </div>

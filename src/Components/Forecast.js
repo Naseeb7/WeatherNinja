@@ -1,10 +1,10 @@
-import React, { useContext,useEffect } from 'react'
+import React, { useContext } from 'react'
 import weatherContext from '../Contexts/weathercontext'
 import "./Forecast.css"
 
 const Forecast = () => {
     const context=useContext(weatherContext)
-    const {weather_info,getWeather,getLocation,forecast}=context
+    const {forecast}=context
     const localDate=(date)=>{
         let d= new Date(date)
         return d.toDateString()

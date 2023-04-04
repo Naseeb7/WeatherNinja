@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import weatherContext from '../Contexts/weathercontext'
 
 const CurrentWeather = () => {
     const context=useContext(weatherContext)
-    const {weather_info,location,current,getWeather,getLocation}=context
+    const {location,current}=context
+
   return (
      location && <div className='currentWeatherContainer'>
         <div className="locationDetails">
