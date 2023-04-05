@@ -9,11 +9,11 @@ const CurrentWeather = () => {
   return (
      location && <div className='currentWeatherContainer'>
         <div className="locationDetails">
-        <i class="fa-solid fa-location-dot" style={{color: "#ffffff"}}></i>
+        <i className="fa-solid fa-location-dot" style={{color: "#ffffff"}}></i>
             <span className="details">{location.name} , {location.region} , {location.country}</span>
             <span className="date">{location.localtime.split(" ")[0]}</span>
         </div>
-        <h4>Now</h4>
+        <h4>Last Updated on {current.last_updated.split(" ")[1]}  (local time)</h4>
         <div className="currentContainer">
         <div className="currentTemp">
             <img src={current.condition.icon} alt="CurrentCondition" className='weatherIcon'/>

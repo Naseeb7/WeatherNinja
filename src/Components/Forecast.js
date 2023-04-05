@@ -51,9 +51,9 @@ const Forecast = () => {
         </div>
       })}
       {forecast.forecastday.map((element) => {
-        return <div className="hourCardhidden" id={element.date}>
+        return <div className="hourCardhidden" id={element.date} key={element.date_epoch}>
           {element.hour.map((ele) => {
-            return <div className="hours" key={ele.time}>
+            return <div className="hours" key={ele.time_epoch}>
               <h4><span>{ele.time.slice(-5)}</span></h4>
               <b><span>{ele.temp_c}&#176;c</span></b>
               <img src={ele.condition.icon} alt={ele.condition.text} />

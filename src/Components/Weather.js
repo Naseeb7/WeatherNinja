@@ -5,17 +5,12 @@ import Forecast from './Forecast';
 import "./Weather.css"
 
 const Weather = () => {
-    // const context=useContext(weatherContext)
-    // const {getWeather,getLocation,setBackground}=context
-    // useEffect(()=>{
-    //   getLocation()
-    //   getWeather()
-    // if(current){
-    //   setBackground(current)
-    //   }
-    // },[current])
     const context=useContext(weatherContext)
-    const {current,setBackground}=context
+    const {getWeather,getLocation,setBackground,current}=context
+    useEffect(()=>{
+      getLocation()
+      getWeather()
+    },[])
     useEffect(()=>{
       if(current){
       setBackground(current)
