@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import weatherContext from '../Contexts/weathercontext'
 import "./CurrentWeather.css"
 
 const CurrentWeather = () => {
     const context=useContext(weatherContext)
     const {location,current}=context
-
   return (
      location && <div className='currentWeatherContainer'>
         <div className="locationDetails">
@@ -13,7 +12,7 @@ const CurrentWeather = () => {
             <span className="details">{location.name} , {location.region} , {location.country}</span>
             <span className="date">{location.localtime.split(" ")[0]}</span>
         </div>
-        <h4>Last Updated on {current.last_updated.split(" ")[1]}  (local time)</h4>
+        <h4>Last Updated on {new Date(current.last_updated).toLocaleString()}</h4>
         <div className="currentContainer">
         <div className="currentTemp">
             <img src={current.condition.icon} alt="CurrentCondition" className='weatherIcon'/>
