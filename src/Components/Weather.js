@@ -10,11 +10,13 @@ const Weather = () => {
     useEffect(()=>{
       getLocation()
       getWeather()
+      // eslint-disable-next-line
     },[])
     useEffect(()=>{
       if(current){
       setBackground(current)
       }
+      // eslint-disable-next-line
     },[current])
   return ( 
   <div className='weatherContainer'>

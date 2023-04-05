@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import weatherContext from '../Contexts/weathercontext'
 import "./SearchBar.css"
 import Spinner from './Spinner'

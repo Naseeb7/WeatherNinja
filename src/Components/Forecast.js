@@ -26,7 +26,6 @@ const Forecast = () => {
                 let card = document.getElementById(element.date)
                 card.classList.toggle("hourCard")
                 let arrow=document.getElementById(element.date+"arrow")
-                let day=document.getElementById(element.date_epoch)
                 if(arrow.classList.contains("hide")){
                   arrow.classList.toggle("show")
                 }
@@ -40,7 +39,6 @@ const Forecast = () => {
                   card.classList.remove("hourCard")
                   card.classList.add("hourCardhidden")
                   let arrow=document.getElementById(forecast.forecastday[j].date+"arrow")
-                  let day=document.getElementById(forecast.forecastday[j].date_epoch)
                   arrow.classList.toggle("show")
                 }
 
