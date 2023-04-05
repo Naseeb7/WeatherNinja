@@ -1,5 +1,12 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+
 body{
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
     /* background-position: center center; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,15 +19,39 @@ body{
 .btn{
     display: flex;
     border-radius: 5px;
-    background-color: #ADEFD1FF  ;
-    color: #00203FFF ;
+    background-color: white ;
+    color: black ;
     padding: 4px;
     margin: 5px;
-    transition: .3s;
+    outline: none;
+    border: none;
+    transition: .2s ease-in-out;
+    font-family: 'Lexend', sans-serif;
 }
 .btn:hover{
     scale: .95;
+    background-color: black;
+    color: white;
 }
 .btn:active{
     transform: translateY(2px);
 }
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #5c5c5caa; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #000000aa; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+  }

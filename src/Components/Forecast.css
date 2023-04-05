@@ -1,12 +1,52 @@
+.forecastContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-around;
+    position: relative;
+    font-family: 'Rajdhani', sans-serif;
+    /* border: 2px solid red; */
+}
+.daycardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.475);
+    border-radius: 5px;
+    width: 25%;
+    padding: 5px;
+    /* border: 2px solid blue; */
+}
 .hourCardhidden{
     display: none;
 }
 .hourCard{
     display: flex;
+    /* flex-wrap: wrap; */
     flex-direction: row;
-    overflow-y: auto;
+    /* position: absolute;
+    bottom: 0; */
+    overflow:auto;
+    background-color: rgba(255, 255, 255, 0.534);
+    margin: 5px;
+    padding: 5px;
+    /* border: 2px solid white; */
+    border-radius: 5px;
 }
 .hours{
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid greenyellow; */
+    border-right: 1px dashed black;
     margin: 5px;
+    padding: 5px;
+    align-items: center;
+    width: 100%;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
 }
