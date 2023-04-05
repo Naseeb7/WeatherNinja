@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import weatherContext from './weathercontext'
 
+const weatherKey=process.env.REACT_APP_APIKEY
+
 const WeatherState = (props) => {
     const [location, setLocation] = useState(null)
     const [current, setCurrent] = useState(null)
     const [forecast, setForecast] = useState(null)
+    const [loading, setLoading] = useState(false)
     function error() {
         document.getElementById("locating").innerHTML = "Unable to retrieve your location";
       }
@@ -18,26 +21,30 @@ const WeatherState = (props) => {
     const getWeather = async (position) => {
         try {
             document.getElementById("locating").innerHTML=""
-        const url = `https://api.weatherapi.com/v1/forecast.json?key=12e425f865dd4179ad7165926230204&q=${position.coords.latitude},${position.coords.longitude}&days=3&aqi=no&alerts=no`
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${position.coords.latitude},${position.coords.longitude}&days=3&aqi=no&alerts=no`
+        setLoading(true)
         const data = await fetch(url);
         const parsedData = await data.json()
         setLocation(parsedData.location);
         setCurrent(parsedData.current)
         setForecast(parsedData.forecast)
+        setLoading(false)
             
         } catch (error) {
-            document.getElementById("locating").innerHTML=error
+            console.log("Locating...")
         }
     }
     const handleSearch=async (e)=>{
         e.preventDefault()
         let value=document.getElementById("search").value
-        const url = `https://api.weatherapi.com/v1/forecast.json?key=12e425f865dd4179ad7165926230204&q=${value}&days=3&aqi=no&alerts=no`
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${value}&days=3&aqi=no&alerts=no`
+        setLoading(true)
         const data = await fetch(url);
         const parsedData = await data.json()
         setLocation(parsedData.location);
         setCurrent(parsedData.current)
         setForecast(parsedData.forecast)
+        setLoading(false)
     }
     const setBackground=(current)=>{
         if(current.condition.text==="Sunny"){
@@ -66,7 +73,7 @@ const WeatherState = (props) => {
         }
     }
     return (
-        <weatherContext.Provider value={{ location, current, forecast, getWeather,getLocation,handleSearch,setBackground }}>
+        <weatherContext.Provider value={{ location, current, forecast, getWeather,getLocation,handleSearch,setBackground,loading }}>
             {props.children}
         </weatherContext.Provider>
     )

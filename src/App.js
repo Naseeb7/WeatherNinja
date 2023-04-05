@@ -2,6 +2,7 @@ import './App.css';
 import Weather from './Components/Weather';
 import WeatherState from './Contexts/WeatherState';
 import SearchBar from "./Components/SearchBar"
+import Spinner from "./Components/Spinner"
 
 function App() {
   return (
