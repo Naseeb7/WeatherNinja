@@ -16,9 +16,9 @@ const SearchBar = () => {
       <input type="text" placeholder="London,Delhi,Moscow...." name="search"  id='search'/>
       <div className="buttons">
       <button id='searchbtn' className='btn' onClick={handleSearch}>Search</button>
-      <Spinner loading={loading}/>
       <button id="currentWeather" className='btn' onClick={handleCurrent}>Current</button>
       </div>
+      <Spinner loading={loading}/>
     </div>
     </>
   )

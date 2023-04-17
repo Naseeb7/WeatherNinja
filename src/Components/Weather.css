@@ -9,3 +9,11 @@
     padding: 5px;
     /* border: 2px solid blue; */
 }
+.weatherapiIcon{
+    display: flex;
+    flex-direction: column;
+    scale: 0.5;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}

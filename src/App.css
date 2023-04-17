@@ -36,6 +36,21 @@ body{
 .btn:active{
     transform: translateY(2px);
 }
+
+.spinner {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* overflow: auto; */
+  /* background-color: rgba(0, 0, 0, 0.675); */
+  z-index: 999;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 7px;
